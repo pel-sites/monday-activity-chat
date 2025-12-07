@@ -1,20 +1,25 @@
-app = "monday-activity-chat"
-primary_region = "sjc"
+# fly.toml app configuration file generated for monday-activity-chat on 2025-12-07T03:44:39-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'monday-activity-chat'
+primary_region = 'sjc'
 
 [build]
+
+[env]
+  MCP_SERVER_URL = 'http://monday-activity-mcp.internal:3000'
+  PORT = '8000'
 
 [http_service]
   internal_port = 8000
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
 
-[env]
-  PORT = "8000"
-  MCP_SERVER_URL = "http://monday-activity-mcp.internal:3000"
-
 [[vm]]
-  memory = "256mb"
-  cpu_kind = "shared"
+  memory = '256mb'
+  cpu_kind = 'shared'
   cpus = 1
