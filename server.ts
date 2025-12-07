@@ -28,6 +28,15 @@ const mcpTools = [
       required: ["sql"],
     },
   },
+  {
+    name: "get_user_metrics",
+    description: "Returns comparative metrics for all users with rankings. Includes total_actions, items_created, days_active, workspaces_touched, boards_touched and their rankings across users.",
+    input_schema: {
+      type: "object",
+      properties: {},
+      required: [],
+    },
+  },
 ];
 
 const systemPrompt = `You are an assistant that helps users query and analyze Monday.com activity data.
@@ -35,11 +44,16 @@ const systemPrompt = `You are an assistant that helps users query and analyze Mo
 You have access to tools that let you:
 1. get_schema - Discover what tables and views are available
 2. run_query - Execute SQL queries to retrieve data
+3. get_user_metrics - Get comparative metrics and rankings for all users
 
 When answering questions:
 1. First use get_schema to understand the available data if needed
-2. Then use run_query to fetch relevant data
+2. Use run_query to fetch relevant data, or get_user_metrics for user comparisons
 3. Analyze the results and provide a clear answer with supporting data
+
+Format your responses with:
+**Answer**: Direct response to the question
+**Justification**: The data and metrics that support your answer
 
 Always explain what data you found and how it supports your answer.`;
 
