@@ -4,6 +4,7 @@
 #
 
 app = 'monday-activity-chat'
+org = 'pel-sites'
 primary_region = 'sjc'
 
 [build]
