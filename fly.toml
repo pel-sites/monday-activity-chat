@@ -9,7 +9,7 @@ primary_region = 'sjc'
 [build]
 
 [env]
-  MCP_SERVER_URL = 'http://monday-activity-mcp.internal:3000'
+  MCP_SERVER_URL = 'https://monday-activity-mcp.fly.dev'
   PORT = '8000'
 
 [http_service]
