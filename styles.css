@@ -27,6 +27,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(45, 90, 39, 0.15);
 }
 
 header {
@@ -59,14 +62,14 @@ main {
 .messages {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .message {
   margin-bottom: 1rem;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.25rem;
   border-radius: 12px;
-  max-width: 80%;
+  max-width: 85%;
 }
 
 .message.user {
@@ -83,7 +86,7 @@ main {
 }
 
 .input-area {
-  padding: 1rem;
+  padding: 1.25rem 1.5rem;
   background: var(--cream);
   border-top: 2px solid var(--sage);
 }
@@ -302,4 +305,70 @@ main {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--leaf-green);
+}
+
+/* Welcome Screen */
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  height: 100%;
+}
+
+.welcome-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--earth-green);
+  margin-bottom: 0.75rem;
+}
+
+.welcome-subtitle {
+  font-size: 1rem;
+  color: var(--bark);
+  max-width: 400px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.example-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.examples-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--moss);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.example-btn {
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 2px solid var(--sage);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--soil);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.example-btn:hover {
+  background: var(--mint);
+  border-color: var(--leaf-green);
+  transform: translateX(4px);
 }
